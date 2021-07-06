@@ -1,0 +1,9 @@
+<!-- components/imgCard/imgCard.wxml -->
+<view class="card">
+  <image mode="widthFix" src="{{imgData.imgUrl}}" />
+  <view class="name">{{imgData.name}}</view>
+  <view class="tip-list">
+    <text wx:for="{{imgData.tagList}}" wx:key="*this">{{item}}</text>
+  </view>
+  <view class="price">￥ {{imgData.price}}</view>
+</view>

@@ -1,0 +1,4 @@
+<!-- pages/itemList/itemList.wxml -->
+<view class="item-list">
+  <imgCard wx:for="{{dataList}}" wx:key="id" imgData="{{item}}" />
+</view>

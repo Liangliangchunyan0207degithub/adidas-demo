@@ -1,0 +1,21 @@
+.card {
+  border: 1px solid #eeeeee;
+  padding: 5px;
+  -moz-page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+}
+.card image {
+  width: 100%;
+}
+.card .name {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 40rpx;
+}
+.card .tip-list text {
+  font-size: 24rpx;
+  color: #ccc;
+  margin-right: 20rpx;
+}
