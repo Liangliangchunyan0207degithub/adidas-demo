@@ -1,9 +1,22 @@
 <!-- components/imgCard/imgCard.wxml -->
-<view class="card">
+<view class="card" wx:if="{{imgData.id}}">
   <image mode="widthFix" src="{{imgData.imgUrl}}" />
   <view class="name">{{imgData.name}}</view>
   <view class="tip-list">
     <text wx:for="{{imgData.tagList}}" wx:key="*this">{{item}}</text>
   </view>
   <view class="price">￥ {{imgData.price}}</view>
+  <view class="ranked" wx:if="{{imgData.isHot}}">
+    <text>榜</text>
+    {{imgData.HotName}}第{{imgData.Ranking}}名
+  </view>
+</view>
+<view class="reload-card" wx:else>
+  <image mode="widthFix" />
+  <view class="name"></view>
+  <view class="tip-list">
+    <text></text>
+  </view>
+  <view class="price"></view>
+  <view class="cover"></view>
 </view>

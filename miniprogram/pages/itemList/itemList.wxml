@@ -1,4 +1,7 @@
 <!-- pages/itemList/itemList.wxml -->
-<view class="item-list">
-  <imgCard wx:for="{{dataList}}" wx:key="id" imgData="{{item}}" />
-</view>
+<scroll-view scroll-y="{{true}}" enable-back-to-top="{{true}}">
+  <view class="item-list" wx:if="{{dataList.length}}">
+    <imgCard wx:for="{{dataList}}" wx:key="id" imgData="{{item}}" />
+  </view>
+  <view class="no-data" wx:else>暂无数据</view>
+</scroll-view>
