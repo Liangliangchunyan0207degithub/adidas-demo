@@ -1,0 +1,53 @@
+.reload-card {
+  border: 1px solid #eeeeee;
+  padding: 5px;
+  -moz-page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+  position: relative;
+}
+.reload-card .cover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: loadFrames;
+  animation-timing-function: linear;
+  background: linear-gradient(to right, #eeeeee 8%, #faf6f6 18%, #eeeeee 33%);
+  opacity: 0.3;
+}
+.reload-card image {
+  width: 100%;
+  background-color: #f6f7f8;
+}
+.reload-card .name {
+  width: 200rpx;
+  background-color: #f6f7f8;
+  height: 40rpx;
+}
+.reload-card .tip-list {
+  height: 40rpx;
+  width: 120rpx;
+  background-color: #f6f7f8;
+  margin-top: 10rpx;
+}
+.reload-card .ranked,
+.reload-card .price {
+  width: 100rpx;
+  background-color: #f6f7f8;
+  height: 40rpx;
+  margin-top: 10rpx;
+}
+@keyframes loadFrames {
+  0% {
+    background-position: -375rpx 0;
+  }
+  100% {
+    background-position: 375rpx 0;
+  }
+}

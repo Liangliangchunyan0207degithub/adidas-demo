@@ -1,0 +1,10 @@
+<!-- components/preImgCard/preImgCard.wxml -->
+<view class="reload-card">
+  <image mode="widthFix" />
+  <view class="name"></view>
+  <view class="tip-list">
+    <text></text>
+  </view>
+  <view class="price"></view>
+  <view class="cover"></view>
+</view>

@@ -1,14 +1,13 @@
 /*
  * @Author: chunyan.liang <chunyan.liang@hand-china.com>
  * @Date: 2021-07-06 18:13:48
- * @LastEditTime: 2021-07-07 16:30:57
+ * @LastEditTime: 2021-07-07 21:12:11
  * @Description: 
  */
 // 定义实例
 interface itemListData {
   dataList: dataListInterface[],
-  aa: string,
-  bb: number
+  showPrelodImg: boolean
 }
 
 interface dataListInterface {
@@ -26,15 +25,18 @@ class NewItemList {
   data: itemListData = {
     dataList: [
     ],
-    aa: '1111',
-    bb: 11
+    showPrelodImg: false
   };
   onLoad(options: any): void {
-    console.log(this.data.aa, this.data.bb, this.data.dataList, options)
+    console.log(this.data.dataList, options)
     this.getItemList()
   };
   getItemList(type?: number): void {
     let _this = this
+    //@ts-ignore
+    _this.setData({
+      showPrelodImg: true
+    })
     wx.request({
       url: "https://example.com/getList",
       dataType: 'json',
@@ -51,15 +53,29 @@ class NewItemList {
           })
           wx.stopPullDownRefresh()
         }
-
+        //@ts-ignore
+        _this.setData({
+          showPrelodImg: false
+        })
       }
     })
   };
+  // 上拉加载
   onReachBottom(): void {
-    this.getItemList(1)
+    console.log(this.data.showPrelodImg)
+    if (!this.data.showPrelodImg) {
+      this.getItemList(1)
+    }
+
   };
+  // 下拉刷新
   onPullDownRefresh(): void {
     this.getItemList(0)
+  };
+  // 获取图片尺寸
+  getImgSize(option: any): void {
+    let imageWidth: number = option.detail.width
+    let imageHeight: number = option.detail.height
   }
 
 }

@@ -1,7 +1,8 @@
 <!-- pages/itemList/itemList.wxml -->
 <scroll-view scroll-y="{{true}}" enable-back-to-top="{{true}}">
   <view class="item-list" wx:if="{{dataList.length}}">
-    <imgCard wx:for="{{dataList}}" wx:key="id" imgData="{{item}}" />
+    <imgCard wx:for="{{dataList}}" wx:key="id" imgData="{{item}}" bindgetImgSize="getImgSize" />
+    <preImgCard wx:if="{{showPrelodImg}}" />
   </view>
   <view class="no-data" wx:else>暂无数据</view>
 </scroll-view>

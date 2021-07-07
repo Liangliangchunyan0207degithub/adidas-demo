@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "imgCard": "/components/imgCard/imgCard"
+    "imgCard": "/components/imgCard/imgCard",
+    "preImgCard": "/components/preImgCard/preImgCard"
   },
   "navigationBarBackgroundColor": "#000000",
   "navigationBarTextStyle": "white",
