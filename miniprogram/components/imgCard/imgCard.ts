@@ -1,7 +1,7 @@
 /*
  * @Author: chunyan.liang <chunyan.liang@hand-china.com>
  * @Date: 2021-07-06 18:14:22
- * @LastEditTime: 2021-07-07 19:09:41
+ * @LastEditTime: 2021-07-08 16:41:38
  * @Description: 
  */
 Component({
@@ -26,9 +26,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onImageLoad(options: any): void {
-      console.log(options,)
-      this.triggerEvent('getImgSize', options.detail)
-    }
+
   }
 })

@@ -1,7 +1,7 @@
 /*
  * @Author: chunyan.liang <chunyan.liang@hand-china.com>
  * @Date: 2021-07-07 20:37:49
- * @LastEditTime: 2021-07-07 20:38:03
+ * @LastEditTime: 2021-07-08 16:35:13
  * @Description:
  */
 Component({
@@ -9,7 +9,6 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
   },
 
   /**

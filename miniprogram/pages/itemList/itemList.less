@@ -1,11 +1,18 @@
 .item-list{
   width: 100%;
-  -moz-column-count:2; /* Firefox */
-  -webkit-column-count:2; /* Safari 和 Chrome */
-  column-count:2;
- -moz-column-gap: 2rpx;
- -webkit-column-gap: 2rpx;
-  column-gap: 2rpx;
+  .left-item, .right-item{
+    width: 49%;
+    float: left;
+  }
+  .right-item{
+    margin-left: 1%;
+  }
+//   -moz-column-count:2; /* Firefox */
+//   -webkit-column-count:2; /* Safari 和 Chrome */
+//   column-count:2;
+//  -moz-column-gap: 2rpx;
+//  -webkit-column-gap: 2rpx;
+//   column-gap: 2rpx;
 }
 .no-data{
   height: 100%;

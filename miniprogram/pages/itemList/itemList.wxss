@@ -1,13 +1,13 @@
 .item-list {
   width: 100%;
-  -moz-column-count: 2;
-  /* Firefox */
-  -webkit-column-count: 2;
-  /* Safari 和 Chrome */
-  column-count: 2;
-  -moz-column-gap: 2rpx;
-  -webkit-column-gap: 2rpx;
-  column-gap: 2rpx;
+}
+.item-list .left-item,
+.item-list .right-item {
+  width: 49%;
+  float: left;
+}
+.item-list .right-item {
+  margin-left: 1%;
 }
 .no-data {
   height: 100%;
