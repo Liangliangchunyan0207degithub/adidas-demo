@@ -1,0 +1,13 @@
+<!-- pages/searchPage/searchPage.wxml -->
+<navBar bindconfirm="search" bindgoBack="goBack" inputValue="{{inputValue}}" />
+<view class="search-page">
+  <view class="search-history">
+    <view class="search-title">
+      <text>搜索历史</text>
+      <text bindtap="clearHistory">清除</text>
+    </view>
+    <view class="history-item">
+      <text wx:for="{{historySearchList}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+</view>

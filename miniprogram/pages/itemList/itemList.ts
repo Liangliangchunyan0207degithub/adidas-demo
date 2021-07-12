@@ -1,7 +1,7 @@
 /*
  * @Author: chunyan.liang <chunyan.liang@hand-china.com>
  * @Date: 2021-07-06 18:13:48
- * @LastEditTime: 2021-07-08 16:57:37
+ * @LastEditTime: 2021-07-12 22:34:06
  * @Description: 
  */
 // 定义实例
@@ -10,6 +10,8 @@ interface itemListData {
   showPrelodImg: boolean,
   leftList: dataListInterface[],
   rightList: dataListInterface[],
+  refresherTriggered: boolean,
+  [propName: string]: any,
 }
 
 interface dataListInterface {
@@ -31,6 +33,13 @@ Page({
     showPrelodImg: false,
     leftList: [],
     rightList: [],
+    refresherTriggered: false,
+    placeholderArray: [
+      "上衣",
+      "短裤",
+      "女鞋",
+      "男鞋"
+    ]
   },
   onLoad(options: any): void {
     console.log(this.data.dataList, options)
@@ -52,7 +61,8 @@ Page({
           })
         } else { // 下拉刷新
           _this.setData({
-            dataList: res.data.list
+            dataList: res.data.list,
+            refresherTriggered: false
           })
           wx.stopPullDownRefresh()
         }
@@ -71,21 +81,23 @@ Page({
     })
   },
   // 上拉加载
-  onReachBottom(): void {
+  loadMore(): void {
+    console.log('是否执行')
     if (!this.data.showPrelodImg) {
       this.getItemList(1)
     }
 
   },
   // 下拉刷新
-  onPullDownRefresh(): void {
+  handlerefresh(): void {
     // 重置数据
     this.setData({
       dataList: [],
       showPrelodImg: false,
       leftList: [],
       rightList: [],
-      loadingImgSite: "left"
+      loadingImgSite: "left",
+      refresherTriggered: true
     })
     this.getItemList(0)
   },
@@ -103,6 +115,19 @@ Page({
       });
     })
   },
+  // 跳转页面
+  goDetail(): void {
+    wx.navigateTo({
+      url: '../searchPage/searchPage'
+    })
+  },
+  // 获取搜索的值
+  getSearchItem(item: any): void {
+    console.log(item, '搜索的值')
+    wx.navigateTo({
+      url: `../searchPage/searchPage?searchValue=${item.detail.item}`
+    })
+  }
 
 
 })

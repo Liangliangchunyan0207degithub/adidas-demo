@@ -1,14 +1,17 @@
 <!-- pages/itemList/itemList.wxml -->
-<scroll-view scroll-y="{{true}}" enable-back-to-top="{{true}}">
-  <view class="item-list" wx:if="{{dataList.length}}">
-    <view class="left-item">
-      <imgCard wx:for="{{leftList}}" wx:key="id" imgData="{{item}}" />
-      <preImgCard hidden="{{!showPrelodImg }}" />
+<view class="content">
+  <navBar placeholderArray="{{placeholderArray}}" bindgetItem="getSearchItem" />
+  <scroll-view class="scroll-content" enhanced scroll-y="{{true}}" enable-back-to-top="{{true}}" refresher-triggered="{{refresherTriggered}}" refresher-enabled="{{true}}" bindscrolltolower="loadMore" bindrefresherrefresh="handlerefresh">
+    <view class="item-list" wx:if="{{dataList.length}}">
+      <view class="left-item">
+        <imgCard wx:for="{{leftList}}" wx:key="id" imgData="{{item}}" />
+        <preImgCard hidden="{{!showPrelodImg }}" />
+      </view>
+      <view class="right-item">
+        <imgCard wx:for="{{rightList}}" wx:key="id" imgData="{{item}}" bindgetImgSize="getImgSize" />
+        <preImgCard hidden="{{!showPrelodImg}}" />
+      </view>
     </view>
-    <view class="right-item">
-      <imgCard wx:for="{{rightList}}" wx:key="id" imgData="{{item}}" bindgetImgSize="getImgSize" />
-      <preImgCard hidden="{{!showPrelodImg}}" />
-    </view>
-  </view>
-  <view class="no-data" wx:if="{{!showPrelodImg && !dataList.length}}">暂无数据</view>
-</scroll-view>
+    <view class="no-data" wx:if="{{!showPrelodImg && !dataList.length}}">暂无数据</view>
+  </scroll-view>
+</view>

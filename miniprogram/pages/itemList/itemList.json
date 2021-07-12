@@ -1,11 +1,10 @@
 {
   "usingComponents": {
     "imgCard": "/components/imgCard/imgCard",
-    "preImgCard": "/components/preImgCard/preImgCard"
+    "preImgCard": "/components/preImgCard/preImgCard",
+    "navBar": "/components/navBar/navBar"
   },
-  "navigationBarBackgroundColor": "#000000",
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "adidas-demo",
-  "backgroundTextStyle": "dark",
-  "enablePullDownRefresh": true
+  "window": {
+    "navigationStyle": "custom"
+  }
 }

@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2666503 */
+  src: url('//at.alicdn.com/t/font_2666503_apq2ycy8f9.woff2?t=1626072801887') format('woff2'),
+       url('//at.alicdn.com/t/font_2666503_apq2ycy8f9.woff?t=1626072801887') format('woff'),
+       url('//at.alicdn.com/t/font_2666503_apq2ycy8f9.ttf?t=1626072801887') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-adidas:before {
+  content: "\e618";
+}
+
+.icon-sousuo:before {
+  content: "\e657";
+}
+
+.icon-zuixing-50:before {
+  content: "\e63b";
+}

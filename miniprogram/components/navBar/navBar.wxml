@@ -1,0 +1,13 @@
+<!-- components/navBar/navBar.wxml -->
+<view class="nav-bar" style="height:{{navBarHeight}}px; margin-top:{{statusHeight}}px; width:{{navBarWidth}}px">
+  <text wx:if="{{pageNumber>1}}" class="iconfont icon-zuixing-50 back-icon" bindtap="goBack"></text>
+  <text wx:else class="iconfont icon-adidas back-icon"></text>
+  <input wx:if="{{!placeholderArray.length}}" class="search-input" value="{{inputValue}}" placeholder="请输入" bindconfirm="confirm" />
+  <view class="search-view" wx:else>
+    <view class="search-positon" style="top:{{-top}}rpx">
+      <view wx:for="{{placeholderArray}}" wx:key="*this" bindtap="clickItem" data-item="{{item}}">
+        {{item}}
+      </view>
+    </view>
+  </view>
+</view>
